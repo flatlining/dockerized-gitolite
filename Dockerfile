@@ -8,10 +8,7 @@ ENV CROSS_COMPILE=/usr/bin/
 # Upgrade system
 RUN apt-get update
 
-#RUN apt-get -y install build-essential
 RUN apt-get -y install apt-utils
-#RUN apt-get -y install debconf
-#RUN apt-get -y install bash
 
 RUN apt-get upgrade -y
 
@@ -22,9 +19,6 @@ RUN apt-get -y install git
 RUN apt-get autoremove -y && apt-get autoclean -y && apt-get clean -y
 # Remove unecessary files
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-#RUN locale-gen en_US.UTF-8
-#RUN dpkg-reconfigure locales
 
 # To avoid annoying "perl: warning: Setting locale failed." errors,
 # do not allow the client to pass custom locals, see:
@@ -37,7 +31,6 @@ RUN adduser --system --group --shell /bin/sh git
 RUN su git -c "mkdir /home/git/bin"
 
 RUN cd /home/git; su git -c "git clone git://github.com/sitaramc/gitolite";
-RUN cd /home/git/gitolite; su git -c "git checkout 8f1fd8481aaa338a02f5eb2f41dff4f8f1bc96f";
 RUN cd /home/git; su git -c "gitolite/install -ln";
 
 # https://github.com/docker/docker/issues/5892
