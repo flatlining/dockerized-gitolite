@@ -1,3 +1,5 @@
+Adapted from https://hub.docker.com/r/elsdoerfer/gitolite/, https://github.com/miracle2k/dockerfiles/tree/master/gitolite
+
 ### gitolite on docker
 
 Runs an SSH server, serving gitolite as the git@ user.
