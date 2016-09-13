@@ -14,10 +14,16 @@ RUN apt-get update
 
 RUN apt-get -y install apt-utils
 
+RUN apt-get -y install locales
+
+RUN locale-gen en_US.UTF-8
+RUN dpkg-reconfigure locales
+
 RUN apt-get upgrade -y
 
 RUN apt-get -y install openssh-server
 RUN apt-get -y install git
+RUN apt-get -y install nano
 
 # Clean installation files
 RUN apt-get autoremove -y && apt-get autoclean -y && apt-get clean -y
