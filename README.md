@@ -4,6 +4,8 @@
   - https://github.com/miracle2k/dockerfiles/tree/master/gitolite
 - https://hub.docker.com/r/derektamsen/gitserver/~/dockerfile/
 - https://hub.docker.com/r/ekapusta/alpine-gitolite/~/dockerfile/
+- https://hub.docker.com/r/craeckie/gitolite/~/dockerfile/
+- https://hub.docker.com/r/betacz/gitolite/~/dockerfile/
 
 ### gitolite on docker
 
