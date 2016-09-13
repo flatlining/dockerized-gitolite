@@ -4,6 +4,7 @@ MAINTAINER Matias Schertel <mschertel@gmail.com>
 # Environment
 ENV ARCH=arm
 ENV CROSS_COMPILE=/usr/bin/
+ENV LC_CTYPE=C
 ENV LC_ALL=C
 ENV LANG=C
 ENV DEBIAN_FRONTEND=noninteractive
