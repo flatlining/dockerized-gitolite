@@ -4,6 +4,8 @@ MAINTAINER Matias Schertel <mschertel@gmail.com>
 # Environment
 ENV ARCH=arm
 ENV CROSS_COMPILE=/usr/bin/
+ENV LC_ALL=C
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Upgrade system
 RUN apt-get update
