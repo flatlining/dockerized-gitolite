@@ -1,4 +1,10 @@
-###Sources
+# Dockerized Gitolite for Raspberry Pi
+
+## Run
+
+    docker run -p 22022:22 -e SSH_KEY="$(cat ~/admin.pub)" -v $(pwd)/git/repositories:/home/git/repositories -v $(pwd)/git/ssh:/etc/ssh --restart=always <image_name>
+
+## Sources
 
 - https://hub.docker.com/r/elsdoerfer/gitolite/
   - https://github.com/miracle2k/dockerfiles/tree/master/gitolite
@@ -7,7 +13,9 @@
 - https://hub.docker.com/r/craeckie/gitolite/~/dockerfile/
 - https://hub.docker.com/r/betacz/gitolite/~/dockerfile/
 
-### gitolite on docker
+## Instructions
+
+#### gitolite on docker
 
 Runs an SSH server, serving gitolite as the git@ user.
 
@@ -17,7 +25,7 @@ you provided, or you can bootstrap with an existing gitolite-admin repository.
 On subsequent starts, will run "gitolite setup" everytime to integrate any
 outside changes.
 
-### Examples
+#### Examples
 
 New installation:
 
@@ -27,7 +35,7 @@ Use an existing gitolite installation:
 
     docker run -v /var/vcroot/git:/home/git/repositories elsdoerfer/gitolite
 
-### Environment variables:
+#### Environment variables:
 
 **SSH_KEY**
 
@@ -43,7 +51,7 @@ These will be inserted into gitolite.rc.
 
 Hostnames (only a single one is supported currently) to add to known_hosts, i.e. *github.com*.
 
-### Directories you could bind mount (or use --volumes-from)
+#### Directories you could bind mount (or use --volumes-from)
 
 /home/git/repositories
   The actual git repositories will be stored here.
@@ -53,7 +61,7 @@ Hostnames (only a single one is supported currently) to add to known_hosts, i.e.
   and if you don't maintain them across containers, your clients will see warnings
   that they changed.
 
-### Mirroring
+#### Mirroring
 
 If your gitolite install needs to mirror (that is, execute git push itself), the
 image can help you:
@@ -67,7 +75,7 @@ image can help you:
 
 * Use the *TRUST_HOSTS* environment variable to prepare the ./known_hosts file.
 
-## Further customization
+### Further customization
 
 If you need to use things like custom hooks, you have different options:
 
