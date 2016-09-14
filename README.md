@@ -2,7 +2,9 @@
 
 ## Run
 
-    docker run -p 22022:22 -e SSH_KEY="$(cat ~/admin.pub)" -v $(pwd)/git/repositories:/home/git/repositories -v $(pwd)/git/ssh:/etc/ssh --restart=always <image_name>
+```bash
+docker run -p 22022:22 -e SSH_KEY="$(cat ~/admin.pub)" -v $(pwd)/git/repositories:/home/git/repositories -v $(pwd)/git/ssh:/etc/ssh --restart=always <image_name>
+```
 
 ## Sources
 
