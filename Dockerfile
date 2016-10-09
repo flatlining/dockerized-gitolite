@@ -20,10 +20,8 @@ RUN apt-get -y install nano
 RUN apt-get -y install openssh-server
 RUN apt-get -y install git
 
-# Clean installation files
-RUN apt-get autoremove -y && apt-get autoclean -y && apt-get clean -y
 # Remove unecessary files
-RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN apt-get autoremove -y && apt-get autoclean -y && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # To avoid annoying "perl: warning: Setting locale failed." errors,
 # do not allow the client to pass custom locals, see:
