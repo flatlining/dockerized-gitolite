@@ -1,12 +1,12 @@
-# Gitolite for Raspberry Pi
+## Gitolite for Raspberry Pi
 
-## Run
+### Run
 
 ```bash
 docker run -p 22022:22 -e SSH_KEY="$(cat ~/admin.pub)" -v $(pwd)/git/repositories:/home/git/repositories -v $(pwd)/git/ssh:/etc/ssh --restart=always <image_name>
 ```
 
-## Sources
+### Sources
 
 - https://hub.docker.com/r/elsdoerfer/gitolite/
   - https://github.com/miracle2k/dockerfiles/tree/master/gitolite
@@ -15,7 +15,7 @@ docker run -p 22022:22 -e SSH_KEY="$(cat ~/admin.pub)" -v $(pwd)/git/repositorie
 - https://hub.docker.com/r/craeckie/gitolite/~/dockerfile/
 - https://hub.docker.com/r/betacz/gitolite/~/dockerfile/
 
-## Instructions
+### Instructions
 
 #### gitolite on docker
 
