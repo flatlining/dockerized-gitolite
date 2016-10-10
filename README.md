@@ -1,4 +1,4 @@
-# Dockerized Gitolite for Raspberry Pi
+# Gitolite for Raspberry Pi
 
 ## Run
 
