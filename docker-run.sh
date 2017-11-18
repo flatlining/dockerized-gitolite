@@ -5,4 +5,4 @@ docker run -p 22022:22 \
   -v $HOME/docker-data/git/repositories:/home/git/repositories \
   -v $HOME/docker-data/git/ssh:/etc/ssh \
   --restart=always \
-  --name gitolite rpi-gitolite:arm
+  --name gitolite flatlining/gitolite:arm
