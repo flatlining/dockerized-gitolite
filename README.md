@@ -6,6 +6,26 @@
 docker run -p 22022:22 -e SSH_KEY="$(cat ~/admin.pub)" -v $HOME/docker-data/git/repositories:/home/git/repositories -v $HOME/docker-data/git/ssh:/etc/ssh --restart=always --name gitolite <image_name>
 ```
 
+#### SSH config
+
+Add to `~/.ssh/config`:
+
+```
+Host gitbox
+    user git
+    hostname dockera.local
+    port 22022
+    identityfile ~/.ssh/mschertel
+
+Host gitadmin
+    user git
+    hostname dockera.local
+    port 22022
+    identityfile ~/.ssh/gitolite
+```
+
+Than to clone `admin` repo use `git clone gitadmin:gitolite-admin` or `git clone gitbox:<repo>` for other repositories.
+
 ### Sources
 
 - https://hub.docker.com/r/elsdoerfer/gitolite/
