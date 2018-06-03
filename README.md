@@ -15,13 +15,13 @@ Host gitbox
     user git
     hostname dockera.local
     port 22022
-    identityfile ~/.ssh/mschertel
+    identityfile ~/.ssh/keyfile
 
 Host gitadmin
     user git
     hostname dockera.local
     port 22022
-    identityfile ~/.ssh/gitolite
+    identityfile ~/.ssh/admin
 ```
 
 Than to clone `admin` repo use `git clone gitadmin:gitolite-admin` or `git clone gitbox:<repo>` for other repositories.
