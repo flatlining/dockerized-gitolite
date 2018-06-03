@@ -15,13 +15,15 @@ RUN apt-get -y install locales && \
     locale-gen en_US.UTF-8 && \
     dpkg-reconfigure locales
 
-RUN apt-get -y install nano
-
-RUN apt-get -y install openssh-server && \
-    apt-get -y install git
-
 # Remove unecessary files
 RUN apt-get autoremove -y && apt-get autoclean -y && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# Dockerfile specific
+
+RUN apt-get update
+RUN apt-get -y install nano && \
+    apt-get -y install openssh-server && \
+    apt-get -y install git
 
 # To avoid annoying "perl: warning: Setting locale failed." errors,
 # do not allow the client to pass custom locals, see:
