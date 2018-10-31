@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-docker build -t flatlining/gitolite:arm .
+docker image build -t gitolite .
